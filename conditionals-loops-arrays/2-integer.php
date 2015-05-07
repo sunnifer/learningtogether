@@ -22,36 +22,26 @@ echo "End time: ";
 $h = $N / 60;
 settype($h, "int");
 
-// when $h < 12, echo $h and $ampm = pm;
-// when $h >= 12, echo $h % 12
 
-if ($h < 0) {
-  echo "Error. No negative values allowed.";
-}
+// getting the right hour
 
-else if ($h == 0) {
+$hour = $h % 12;
+
+if ($hour == 0) {
   echo 12;
 }
 
-else if ($h < 12) {
-  echo $h;
-}
-
 else {
-  echo $h % 12;
+  echo $hour;
 }
 
-// declare $ampm
+
+// getting am / pm
 
 $ampm = "pm";
+$ampmCalc = $h % 24;
 
-// if $h % 12 = 1 (is odd) $ampm = am; if $h % 12 = 0 (is even) $ampm = pm;
-
-while ($h > 24) {
-  $h = $h / 12;
-}
-
-if ($h % 2 == 0) {
+if ($ampmCalc < 12) {
   $ampm = "pm";
 }
 
@@ -59,7 +49,7 @@ else {
   $ampm = "am";
 }
 
-// modulus $N % 60 - call the modulus $m; echo ":" . "$m";
+// finding the right minute
 
 $m = $N % 60;
 
