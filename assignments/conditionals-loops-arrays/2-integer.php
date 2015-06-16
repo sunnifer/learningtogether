@@ -10,11 +10,12 @@
 
 // create integer $N command-line argument
 
-$N = $argv[1];
+$start_time = $argv[1];
+$delta = $argv[2];
 
 // write Start time: 12:00pm and End Time:
 
-echo "Start time: 12:00pm\n";
+echo "Start time: " . $start_time;
 echo "End time: ";
 
 // divide $N/60 - call the quotient $h;
@@ -22,6 +23,9 @@ echo "End time: ";
 $h = $N / 60;
 settype($h, "int");
 
+function tell_time($start_time, $delta) {
+
+}
 
 // getting the right hour
 
