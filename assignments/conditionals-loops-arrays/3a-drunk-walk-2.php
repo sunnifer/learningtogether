@@ -33,8 +33,8 @@ while ($steps>0) {
   $steps = --$steps;
   }
 
-echo $x;
+// write something here to find the square
 
-echo "squared distance = " . $square;
+echo "squared distance = " . ;
 
 ?>
