@@ -9,44 +9,54 @@
 
 // (a) create integer command-line arg N that dictates the number of steps taken; also create var $direction, $x, $y.
 
-$steps = $argv[1];
-
 // set and print the current location
 
 function print_location($x,$y) {
+  $steps = $argv[1];
+  static $x = 0;
+  static $y = 0;
   $direction = mt_rand(1,4);
-  // echo $direction  . "\n";
-  switch ($direction) {
-    case 1: // move north
-      $y = ++$y;
-      break;
-    case 2: // move south
-      $y = --$y;
-      break;
-    case 3: // move east
-      $x = ++$x;
-      break;
-    case 4: // move west
-      $x = --$x;
-      break;
-    default:
-      echo "There's been an inexplicable error.";
+  echo "$ direction = " . $direction  . "\n";
+
+  while ($steps > 0) {
+    switch ($direction) {
+      case 1: // move north
+        $y = ++$y;
+        break;
+      case 2: // move south
+        $y = --$y;
+        break;
+      case 3: // move east
+        $x = ++$x;
+        break;
+      case 4: // move west
+        $x = --$x;
+        break;
+      default:
+        echo "There's been an inexplicable error.";
+    }
+      echo "$ x = " . $x . "\n";
+      echo "$ y = " . $y . "\n";
+      --$steps;
+    //return $x;
+    //return $y;
   }
-    echo "(" . $x . ", " . $y . ")" . "\n";
 }
+
+print_location($x,$y);
 
 // (b) create while loop, where while $steps>0, repeat print_location
 
-while ($steps>0) {
-  print_location($x,$y);
-  $steps = --$steps;
-}
+//while ($steps>0) {
+//  print_location($x,$y);
+//  $steps = --$steps;
+//}
 
 // when $steps=0, print the square of the final distance from origin
 
-$xSquare = $x*$x;
-echo $xSquare;
+// $xSquare = $x*$x;
+// echo $xSquare;
 
-echo "squared distance = ";
+// echo "squared distance = ";
 
 ?>
