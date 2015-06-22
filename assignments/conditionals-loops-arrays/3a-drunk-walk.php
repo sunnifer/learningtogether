@@ -11,14 +11,14 @@
 
 // set and print the current location
 
+$steps = $argv[1];
+
 function print_location($x,$y) {
-  $steps = $argv[1];
   static $x = 0;
   static $y = 0;
   $direction = mt_rand(1,4);
   echo "$ direction = " . $direction  . "\n";
 
-  while ($steps > 0) {
     switch ($direction) {
       case 1: // move north
         $y = ++$y;
@@ -37,13 +37,28 @@ function print_location($x,$y) {
     }
       echo "$ x = " . $x . "\n";
       echo "$ y = " . $y . "\n";
-      --$steps;
     //return $x;
     //return $y;
   }
+
+while ($steps > 0) {
+    print_location($x,$y);
+    --$steps;
 }
 
-print_location($x,$y);
+function squared_distance($x,$y) use (print_location($x,$y)) {
+  echo $x;
+}
+
+squared_distance($x,$y);
+
+
+//$printy = function () use ($y) {
+//  echo $y;
+//};
+
+
+//print_location($x,$y);
 
 // (b) create while loop, where while $steps>0, repeat print_location
 

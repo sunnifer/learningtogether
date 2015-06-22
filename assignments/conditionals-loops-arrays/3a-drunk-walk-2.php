@@ -30,11 +30,11 @@ function print_location($x,$y) {
 
 while ($steps>0) {
   print_location($x,$y);
-  $steps = --$steps;
+  --$steps;
   }
 
 // write something here to find the square
 
-echo "squared distance = " . ;
+echo "squared distance = ";
 
 ?>
