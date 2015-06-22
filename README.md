@@ -14,3 +14,4 @@ Repo Structure:
 2015-06-21
 - installed php-cs-fixer
 - read through http://www.phptherightway.com/
+- Model-View-Controller (MVC)
