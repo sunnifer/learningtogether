@@ -9,10 +9,9 @@
 
 $steps = $argv[1];
 
-$coordinates = array(
-  "xcoord" => 0,
-  "ycoord" => 0,
-);
+$obj = new stdClass();
+$obj->xcoord = 0;
+$obj->ycoord = 0;
 
 while ($steps > 0) {
   $direction = mt_rand(1,4);
@@ -20,27 +19,27 @@ while ($steps > 0) {
 
     switch ($direction) {
       case 1: // move north
-        ++$coordinates[ycoord];
+        $obj->ycoord = $obj->ycoord + 1;
         break;
       case 2: // move south
-        --$coordinates[ycoord];
+        $obj->ycoord = $obj->ycoord - 1;
         break;
       case 3: // move east
-        ++$coordinates[xcoord];
+        $obj->xcoord = $obj->xcoord + 1;
         break;
       case 4: // move west
-        --$coordinates[xcoord];
+        $obj->xcoord = $obj->xcoord - 1;
         break;
       default:
         echo "There's been an inexplicable error.";
     }
 
-  echo "(" . $coordinates[xcoord] . ", " .  $coordinates[ycoord] . ")\n";
-
+  echo "(" . $obj->xcoord . ", " .  $obj->ycoord . ")\n";
   --$steps;
 }
 
-$squareDist = pow($coordinates[xcoord],2) + pow($coordinates[ycoord],2);
+
+$squareDist = pow($obj->xcoord,2) + pow($obj->ycoord,2);
 
 echo "squared distance = " . $squareDist;
 
