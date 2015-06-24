@@ -13,32 +13,35 @@
 
 $steps = $argv[1];
 
-function print_location($x,$y) {
-  static $x = 0;
-  static $y = 0;
+$coordinates = array(
+  "xcoord" => 0,
+  "ycoord" => 0,
+);
+
+print_r($coordinates);
+
+function print_location($coordinates) {
   $direction = mt_rand(1,4);
   echo "$ direction = " . $direction  . "\n";
+  print_r($coordinates);
 
     switch ($direction) {
       case 1: // move north
-        $y = ++$y;
+        ++$y;
         break;
       case 2: // move south
-        $y = --$y;
+        --$y;
         break;
       case 3: // move east
-        $x = ++$x;
+        ++$x;
         break;
       case 4: // move west
-        $x = --$x;
+        --$x;
         break;
       default:
         echo "There's been an inexplicable error.";
     }
-      echo "$ x = " . $x . "\n";
-      echo "$ y = " . $y . "\n";
-    //return $x;
-    //return $y;
+      print_r($coordinates);
   }
 
 while ($steps > 0) {
@@ -46,11 +49,11 @@ while ($steps > 0) {
     --$steps;
 }
 
-function squared_distance($x,$y) use (print_location($x,$y)) {
-  echo $x;
-}
+//function squared_distance($x,$y) use (print_location($x,$y)) {
+//  echo $x;
+//}
 
-squared_distance($x,$y);
+//squared_distance($x,$y);
 
 
 //$printy = function () use ($y) {
