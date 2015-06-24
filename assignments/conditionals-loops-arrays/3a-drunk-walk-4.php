@@ -1,5 +1,5 @@
 <?php
-
+require_once("coords.php");
 // A drunkard begins walking aimlessly, starting at a lamp post. At each time step, the drunkard forgets where he or she is, and takes one step at random, either north, east, south, or west, with probability 25%. How far will the drunkard be from the lamp post after N steps?
 
 // Write a program that
@@ -7,11 +7,9 @@
 // (b) After each step, print the location of the random walker, treating the lamp post as the origin (0, 0).
 // (c) Also, print the square of the final distance from the origin.
 
-$steps = $argv[1];
+//$steps = $argv[1];
 
-$obj = new stdClass();
-$obj->xcoord = 0;
-$obj->ycoord = 0;
+$obj = new Coords();
 
 while ($steps > 0) {
   $direction = mt_rand(1,4);
@@ -19,7 +17,7 @@ while ($steps > 0) {
 
     switch ($direction) {
       case 1: // move north
-        $obj->ycoord = $obj->ycoord + 1;
+        $obj->increment_y();
         break;
       case 2: // move south
         $obj->ycoord = $obj->ycoord - 1;
