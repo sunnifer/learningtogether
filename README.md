@@ -11,6 +11,12 @@ Repo Structure:
   *Test Code  
   *Ideas  
 
+2015-06-28
+- installed mysql, apache
+- http://jason.pureconcepts.net/2014/11/install-apache-php-mysql-mac-os-x-yosemite/
+- https://www3.ntu.edu.sg/home/ehchua/programming/sql/MySQL_HowTo.html
+- 
+
 2015-06-21
 - installed php-cs-fixer
 - read through http://www.phptherightway.com/
