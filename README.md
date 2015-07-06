@@ -11,6 +11,9 @@ Repo Structure:
   *Test Code  
   *Ideas  
 
+2015-07-05
+- http://www.elated.com/articles/json-basics/
+
 2015-06-28
 - installed mysql, apache
 - http://jason.pureconcepts.net/2014/11/install-apache-php-mysql-mac-os-x-yosemite/
