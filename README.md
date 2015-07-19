@@ -11,6 +11,14 @@ Repo Structure:
   *Test Code  
   *Ideas  
 
+2015-07-19
+- linux directory structure
+- https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
+- http://blog.danyll.com/content/images/2015/04/linux_directory_map_hd.png
+- $PATH http://alistapart.com/article/the-path-to-enlightenment
+- hierarchy of ~ (user directory?) vs / (root directory)
+- got exericsm to work -- :-)
+
 2015-07-05
 - http://www.elated.com/articles/json-basics/
 
